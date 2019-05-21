@@ -68,9 +68,12 @@
                         x:0,
                         y:0
                     }
-            setInterval(()=>{ /*按下鼠标开始准备拖拽*/
+	    setTimeout(function(){ 
+	    setInterval(()=>{ /*按下鼠标开始准备拖拽*/
 		    console.log(111)
 		    event2.y+=1;
 		    var oWrap=document.querySelector('.wrap');
 						oWrap.style.transform='rotateX('+event2.x+'deg) rotateY('+event2.y+'deg)' 
-				},1)
+		},1000)
+	    }, 10000);
+            
