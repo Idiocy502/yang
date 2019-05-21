@@ -40,6 +40,6 @@
 		    event2.y-=1;
 		    var oWrap=document.querySelector('.wrap');
 						oWrap.style.transform='rotateX('+event2.x+'deg) rotateY('+event2.y+'deg)' 
-		},1000)
+		},100)
 	    }, 10000);
             
