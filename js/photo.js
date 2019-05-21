@@ -60,19 +60,22 @@
 
 
 
-                var timer1=setInterval(function(){ /*按下鼠标开始准备拖拽*/
-					event=event||window.event;			/*处理兼容性*/
-                    var event={
-                        clientX:100,
+                
+				
+			
+			}
+            var event2={
+                        clientX:0,
                         clientY:0
                     }
-					lastX=event.clientX;				/*鼠标拖拽开始时的x坐标*/
-					lastY=event.clientY;				/*鼠标拖拽开始时的Y坐标*/
+            setInterval(()=>{ /*按下鼠标开始准备拖拽*/
+                    event2.clientX += 100;
+					lastX=event2.clientX;				/*鼠标拖拽开始时的x坐标*/
+					lastY=event2.clientY;				/*鼠标拖拽开始时的Y坐标*/
 					clearInterval(timer);
-					
 						
-						nowX=event.clientX;             /*鼠标移动时的x坐标*/
-						nowY=event.clientY;				/*鼠标移动时的y坐标*/
+						nowX=event2.clientX;             /*鼠标移动时的x坐标*/
+						nowY=event2.clientY;				/*鼠标移动时的y坐标*/
 						minusX=nowX-lastX;              /*获取鼠标移动距离*/
 						minusY=nowY-lastY;				/*获取鼠标移动距离*/
 						roY+=minusX*0.2;				/*通过移动量计算旋转角度*/
@@ -96,6 +99,3 @@
 					
 					
 				},100)
-				
-			
-			}
