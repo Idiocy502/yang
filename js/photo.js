@@ -31,7 +31,7 @@
 			
 			}
             var event2={
-                        x:0,
+                        x:-10,
                         y:0
                     }
 	    setTimeout(function(){ 
@@ -39,7 +39,7 @@
 		    console.log(111)
 		    event2.y-=1;
 		    var oWrap=document.querySelector('.wrap');
-						oWrap.style.transform='rotateY('+event2.y+'deg) ' 
+			oWrap.style.transform='rotateX('+event2.x+'deg) rotateY('+event2.y+'deg)' 
 		},100)
 	    }, 10000);
             
