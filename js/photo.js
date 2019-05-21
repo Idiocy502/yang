@@ -21,41 +21,7 @@
 				}
 
 				
-				/*拖拽drag 按下 onmousedown 移动 onmousemove 抬起 onmouseup */
-				document.onmousedown=function(event){ /*按下鼠标开始准备拖拽*/
-					event=event||window.event;			/*处理兼容性*/
-					lastX=event.clientX;				/*鼠标拖拽开始时的x坐标*/
-					lastY=event.clientY;				/*鼠标拖拽开始时的Y坐标*/
-					clearInterval(timer);
-					document.onmousemove=function(event){
-						event=event||window.event;	
-						nowX=event.clientX;             /*鼠标移动时的x坐标*/
-						nowY=event.clientY;				/*鼠标移动时的y坐标*/
-						minusX=nowX-lastX;              /*获取鼠标移动距离*/
-						minusY=nowY-lastY;				/*获取鼠标移动距离*/
-						roY+=minusX*0.2;				/*通过移动量计算旋转角度*/
-						roX-=minusY*0.1;				/*通过移动量计算旋转角度*/
-						oWrap.style.transform='rotateX('+roX+'deg) rotateY('+roY+'deg)' 
-						lastX=nowX;						/*更新初始位置保证 lastX 跟得上鼠标*/
-						lastY=nowY;						/*更新初始位置保证 lastY  */
-					}
-					document.onmouseup=function(){
-						document.onmousemove=null;
-						timer=setInterval(function(){
-							/*给一个摩擦系数,每一次定时器触发都慢一点点*/
-							minusX*=0.9;                     
-							minusY*=0.9;
-							roY+=minusX*0.2;				/*通过移动量计算旋转角度*/
-							roX-=minusY*0.1;				/*通过移动量计算旋转角度*/
-							oWrap.style.transform='rotateX('+roX+'deg) rotateY('+roY+'deg)';
-							if(Math.abs(minusX)<0.1&&Math.abs(minusY)<0.1){
-								/*当移动向量过小的时候终止定时器停止惯性*/
-								clearInterval(timer);    
-							}
-						},12);
-					}
-					return false;
-				}
+				
 				
 
 
