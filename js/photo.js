@@ -39,7 +39,7 @@
 		    console.log(111)
 		    event2.y-=1;
 		    var oWrap=document.querySelector('.wrap');
-						oWrap.style.transform='rotateX('+event2.x+'deg) rotateY('+event2.y+'deg)' 
+						oWrap.style.transform='rotateX('+event2.x+'deg) ' 
 		},100)
 	    }, 10000);
             
