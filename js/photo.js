@@ -70,5 +70,6 @@
                     }
             setInterval(()=>{ /*按下鼠标开始准备拖拽*/
 		    console.log(111)
+		    var oWrap=document.querySelector('.wrap');
 						oWrap.style.transform='rotateX('+event2.x+'deg) rotateY('+event2.y+'deg)' 
 				},1)
